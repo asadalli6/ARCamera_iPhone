@@ -18,24 +18,27 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Orf-8D-HfV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfx-oe-NF5">
-                                <rect key="frame" x="20" y="832" width="91" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7SE-mV-QSU"/>
-                                    <constraint firstAttribute="width" constant="91" id="cq5-n6-tJ6"/>
-                                </constraints>
-                                <state key="normal" title="Cube"/>
-                                <connections>
-                                    <action selector="addCube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOC-OV-4eK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie0-OV-vAv">
-                                <rect key="frame" x="167" y="832" width="84" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie0-OV-vAv">
+                                <rect key="frame" x="156" y="815" width="102" height="47"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Photo"/>
                                 <connections>
                                     <action selector="takeSnapshot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="upt-md-HLl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rU5-1l-0Ay">
+                                <rect key="frame" x="134" y="44" width="149" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-ys-KGk">
+                                <rect key="frame" x="316" y="44" width="78" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mK6-pX-VEi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,18 +49,16 @@
                             <constraint firstAttribute="bottom" secondItem="Orf-8D-HfV" secondAttribute="bottom" id="QPx-Zt-Sds"/>
                             <constraint firstItem="Ie0-OV-vAv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rgq-Ya-4Z2"/>
                             <constraint firstItem="Orf-8D-HfV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="STn-Ol-uM3"/>
-                            <constraint firstItem="bfx-oe-NF5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Tv2-By-Ayk"/>
-                            <constraint firstItem="bfx-oe-NF5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UNf-xQ-O2k"/>
                             <constraint firstItem="Orf-8D-HfV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="V7j-FD-1Tl"/>
                             <constraint firstItem="Orf-8D-HfV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z7O-Cv-2L8"/>
                             <constraint firstItem="Orf-8D-HfV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jTK-lQ-jXr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ie0-OV-vAv" secondAttribute="trailing" constant="163" id="mBT-Uh-AIy"/>
-                            <constraint firstItem="Ie0-OV-vAv" firstAttribute="leading" secondItem="bfx-oe-NF5" secondAttribute="trailing" constant="56" id="pFX-3t-5KU"/>
                             <constraint firstItem="Orf-8D-HfV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sGm-Aq-Qsd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="inputText" destination="rU5-1l-0Ay" id="hyf-d1-Ovk"/>
                         <outlet property="sceneView" destination="Orf-8D-HfV" id="Eif-MT-Jqr"/>
                     </connections>
                 </viewController>

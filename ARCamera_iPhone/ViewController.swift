@@ -10,57 +10,41 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sceneView: ARSCNView!
+
+    @IBOutlet weak var inputText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
+        
+        sceneView.add3DText(showText: "\u{1F603}")
         
         sceneView.session.run(configuration)
     }
     
-    func randomFloat(min: Float, max: Float)    -> Float{
-        return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+    
+    @IBAction func updateEmoji(_ sender: Any) {
+        sceneView.removeNodeByName(nodeName: "flyingText")
+        sceneView.add3DText(showText: self.inputText!.text!, nodeName: "flyingText")
     }
-    
-    @IBAction func addCube(_ sender: Any) {
-    
-        let cubeNode = SCNNode(geometry: SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0))
         
-        let cc = getCameraCoordinates(sceneView: sceneView)
-        cubeNode.position = SCNVector3(x: cc.x,y: cc.y, z: cc.z)
-        
-        sceneView.scene.rootNode.addChildNode(cubeNode)
-    }
-    
-    
     @IBAction func takeSnapshot(_ sender: Any) {
         
           UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
     }
     
-    struct myCameraCoordiantes  {
-             var x = Float()
-             var y = Float()
-             var z = Float()
-         }
-    
-    func getCameraCoordinates(sceneView: ARSCNView) -> myCameraCoordiantes  {
-        let cameraTransform = sceneView.session.currentFrame?.camera.transform
-        let cameraCoordinates = MDLTransform(matrix: cameraTransform!)
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+         textField.resignFirstResponder()
+         
+         return true
+     }
+     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        var cc = myCameraCoordiantes()
-        
-        cc.z = cameraCoordinates.translation.z
-        cc.x = cameraCoordinates.translation.x
-        cc.y = cameraCoordinates.translation.y
-        
-        return cc
+        self.view.endEditing(true)
     }
     
 }
