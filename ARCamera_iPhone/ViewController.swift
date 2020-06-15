@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         
-        sceneView.add3DText(showText: "\u{1F603}")
+        sceneView.add3DText(showText: "Type Text above to change me!")
         
         sceneView.session.run(configuration)
     }

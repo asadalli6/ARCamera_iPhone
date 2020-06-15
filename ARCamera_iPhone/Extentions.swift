@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ARCamera_iPhone
 //
-//  Created by Asad Alli on 6/7/20.
+//  Created by Asad Alli on 6/12/20.
 //  Copyright © 2020 Asad Alli. All rights reserved.
 //
 
@@ -29,10 +29,8 @@ extension ARSCNView {
         text.materials = [material]
         
         let node = SCNNode()
-        let xpos = randomPosition(lowerBound: 0.1, upperBound: 0.1)
-        let ypos = randomPosition(lowerBound: 0.1, upperBound: 0.1)
-        node.position = SCNVector3(x: 0, y: 0 , z: -3)
-        node.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+        node.position = SCNVector3(x: 0, y: 0.02 , z: -0.1)
+        node.scale = SCNVector3(x: 0.01, y: 0.01, z: 0.01)
         node.geometry = text
         node.name = nodeName
         
