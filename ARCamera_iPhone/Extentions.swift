@@ -48,8 +48,6 @@ extension ARSCNView {
                                  "colorfull02S",
                                  "colorfullS",
                                  "jean_dark_blue",
-                                 "jean_dark_blue01",
-                                 "jean_dark_blue02",
                                  "leather_pink",
                                  "leather_red",
                                  "leather01",

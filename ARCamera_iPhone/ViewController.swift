@@ -20,15 +20,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         
-        sceneView.add3DText(showText: "Type Text above to change me!")
+        sceneView.add3DText(showText: "😊")
         
         sceneView.session.run(configuration)
     }
     
     
     @IBAction func updateEmoji(_ sender: Any) {
-        sceneView.removeNodeByName(nodeName: "flyingText")
-        sceneView.add3DText(showText: self.inputText!.text!, nodeName: "flyingText")
+        let zCoords = randomFloat(min: -2, max: -0.2)
+        let cube = SCNNode(geometry: SCNSphere(radius: 0.1))
+        cube.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "emoji.png")
+        cube.position = SCNVector3(0, 0, -0.3)
+        sceneView.scene.rootNode.addChildNode(cube)
     }
         
     @IBAction func takeSnapshot(_ sender: Any) {
@@ -41,6 +44,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
          
          return true
      }
+    
+    func randomFloat(min: Float, max: Float) -> Float   {
+        return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+    }
      
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
