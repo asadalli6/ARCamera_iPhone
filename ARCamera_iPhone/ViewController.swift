@@ -12,46 +12,31 @@ import SceneKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sceneView: ARSCNView!
-
-    @IBOutlet weak var inputText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         
-        sceneView.add3DText(showText: "😊")
-        
         sceneView.session.run(configuration)
     }
     
-    
-    @IBAction func updateEmoji(_ sender: Any) {
+    @IBAction func insertEmoji(_ sender: UIButton) {
         let zCoords = randomFloat(min: -2, max: -0.2)
-        let cube = SCNNode(geometry: SCNSphere(radius: 0.1))
+        let cube = SCNNode(geometry: SCNSphere(radius: 0.2))
         cube.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "emoji.png")
-        cube.position = SCNVector3(0, 0, -0.3)
+        cube.position = SCNVector3(0, 0, -1.0)
         sceneView.scene.rootNode.addChildNode(cube)
     }
-        
-    @IBAction func takeSnapshot(_ sender: Any) {
-        
-          UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
-    }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool{
-         textField.resignFirstResponder()
-         
-         return true
-     }
+        
+    
+    @IBAction func takePhoto(_ sender: Any) {
+        UIImageWriteToSavedPhotosAlbum(self.sceneView.snapshot(), nil, nil, nil)
+    }
     
     func randomFloat(min: Float, max: Float) -> Float   {
         return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
-    }
-     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        self.view.endEditing(true)
     }
     
 }

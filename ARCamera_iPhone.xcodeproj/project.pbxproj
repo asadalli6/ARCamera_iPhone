@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C33FB2B124957D4400AD3E2F /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33FB2B024957D4400AD3E2F /* Extentions.swift */; };
 		C3F137F9248DAC7500287052 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F137F8248DAC7500287052 /* AppDelegate.swift */; };
 		C3F137FB248DAC7500287052 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F137FA248DAC7500287052 /* SceneDelegate.swift */; };
 		C3F137FD248DAC7500287052 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F137FC248DAC7500287052 /* ViewController.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C33FB2B024957D4400AD3E2F /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		C3F137F5248DAC7500287052 /* ARCamera_iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCamera_iPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F137F8248DAC7500287052 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F137FA248DAC7500287052 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 		C3F137F7248DAC7500287052 /* ARCamera_iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				C33FB2B024957D4400AD3E2F /* Extentions.swift */,
 				C3F137F8248DAC7500287052 /* AppDelegate.swift */,
 				C3F137FA248DAC7500287052 /* SceneDelegate.swift */,
 				C3F137FC248DAC7500287052 /* ViewController.swift */,
@@ -146,7 +143,6 @@
 			files = (
 				C3F137FD248DAC7500287052 /* ViewController.swift in Sources */,
 				C3F137F9248DAC7500287052 /* AppDelegate.swift in Sources */,
-				C33FB2B124957D4400AD3E2F /* Extentions.swift in Sources */,
 				C3F13803248DAC7500287052 /* ARCamera_iPhone.xcdatamodeld in Sources */,
 				C3F137FB248DAC7500287052 /* SceneDelegate.swift in Sources */,
 			);
